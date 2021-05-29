@@ -1,0 +1,11 @@
+#!/bin/bash
+#number of threads:
+uptime
+for  t  in 1 2 3 4 5 6 7 8
+do
+    for s in 1000 20000 300000 400000 500000 1000000 2000000 3000000 4000000 6000000 8000000
+    do
+        g++   -DARRAYSIZE=$s -DNUMT=$t   simd.cpp  -o five -lm  -fopenmp
+        ./five
+    done
+done

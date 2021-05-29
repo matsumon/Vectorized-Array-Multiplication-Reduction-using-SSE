@@ -1,0 +1,8 @@
+#!/bin/bash
+#number of threads:
+uptime
+for  t  in  1000 20000 300000 400000 500000 1000000 2000000 3000000 4000000 6000000 8000000
+do
+        g++   -DARRAYSIZE=$t   four.cpp  -o four -lm  -fopenmp
+        ./four
+done
